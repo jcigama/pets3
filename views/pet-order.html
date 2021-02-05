@@ -10,20 +10,26 @@
         <form method="post" action="order2">
             <label>What kind of pet would you like to order?
                 <input type="text" name="pet">
-            </label><br><br>
+            </label>
 
-            <label>Select a color
+            <br>
+            <br>
+
+            <label>
+                Select a color
             </label>
 
             <select class="form-control" name="color" id="color">
-                <option>--Select a color--</option>
+                <option>
+                    --Select a color--
+                </option>
+
                 <repeat group="{{ @colors }}" value="{{ @colorOption }}">
                     <option>
                         {{ @colorOption }}
                     </option>
                 </repeat>
             </select>
-
             <input type="submit" value="Submit the order">
         </form>
     </div>

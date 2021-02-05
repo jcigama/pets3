@@ -19,13 +19,13 @@
 
             <h3>Select a size: </h3>
             <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">
-                <input type="radio" id="size" name="size">
+                <input type="radio" id="size" name="size" value="{{ @sizeOption }}">
                 <label for="size"> {{ @sizeOption }} </label> <br>
             </repeat>
 
             <h3>Select an accessory: </h3>
             <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
-                <input type="checkbox">{{ @accessoryOption }} <br> </input>
+                <input type="checkbox" id="accessory" name="accessory[]" value="{{ @accessoryOption }}">{{ @accessoryOption }} <br> </input>
             </repeat>
             <br>
 

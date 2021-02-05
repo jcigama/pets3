@@ -45,20 +45,9 @@ $f3->route('GET /order', function($f3) {
 //Order 2 Route
 $f3->route('POST /order2', function($f3) {
 
-    //Verify 'pet' exists in the post array, if so save it to session
-    if(isset($_POST['pet'])) {
-        $_SESSION['pet'] = $_POST['pet'];
-    }
-
-    //Verify 'colors' exists in the post array, if so save it to session
-    if(isset($_POST['colors'])) {
-        $colors = $_POST['colors'];
-        $colorSelected = null;
-        foreach ($colors as $colorsArray) {
-//            echo "$colorsArray";
-            $_SESSION['colors'] = $colorsArray;
-        }
-    }
+    // Storing POST array data from order 1
+    $_SESSION['pet'] = $_POST['pet'];
+    $_SESSION['color'] = $_POST['color'];
 
     $sizes = getSizes();
     $f3->set('sizes', $sizes);
@@ -73,11 +62,20 @@ $f3->route('POST /order2', function($f3) {
 //Summary Route
 $f3->route('POST /summary', function() {
 
-    //Verify 'petName' exists in the post array, if so save it to session
-    if(isset($_POST['petName']))
-    {
-        $_SESSION['petName'] = $_POST['petName'];
+    // Storing POST array data from order 2
+    $_SESSION['petName'] = $_POST['petName'];
+    $_SESSION['size'] = $_POST['size'];
+    $accessories = [];
+
+//    var_dump($_POST['accessory']);
+
+    foreach ($_POST['accessory'] as $accessory) {
+        $accessories = $accessory;
     }
+
+    $_SESSION['accessory'] = $accessories;
+
+    var_dump($accessories);
 
     $view = new Template();
     echo $view->render('views/order-summary.html');
