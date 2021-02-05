@@ -15,13 +15,14 @@
             <label>Select a color
             </label>
 
-            <select id="colors" name="colors[]">
-                <option value="purple">Purple</option>
-                <option value="green">Green</option>
-                <option value="white">White</option>
-            </select><br>
-
-            <input type="submit" value="Place Order">
+            <select class="form-control" name="color" id="color">
+                <option>--Select a color--</option>
+                <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+                    <option>
+                        {{ @colorOption }}
+                    </option>
+                </repeat>
+            </select>
         </form>
     </div>
 </body>

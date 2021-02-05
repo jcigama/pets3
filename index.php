@@ -23,7 +23,20 @@ $f3->route('GET /', function() {
 });
 
 //Order 1 Route
-$f3->route('GET /order', function() {
+$f3->route('GET /order', function($f3) {
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        //Validate the data
+        if (empty($_POST['pet'])){
+
+        } else{
+
+        }
+    }
+
+    $colors = getColors();
+    $f3->set('colors', $colors);
 
     $view = new Template();
     echo $view->render('views/pet-order.html');
