@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Order</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Order a Pet</h1>
+        <form method="post" action="order2">
+            <label>What kind of pet would you like to order?
+                <input type="text" name="pet">
+            </label><br><br>
+
+            <label>Select a color
+            </label>
+
+            <select id="colors" name="colors[]">
+                <option value="purple">Purple</option>
+                <option value="green">Green</option>
+                <option value="white">White</option>
+            </select><br>
+
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+</body>
+</html>
