@@ -65,17 +65,17 @@ $f3->route('POST /summary', function() {
     // Storing POST array data from order 2
     $_SESSION['petName'] = $_POST['petName'];
     $_SESSION['size'] = $_POST['size'];
-    $accessories = [];
+    $accessories = $_POST['accessory'];
 
 //    var_dump($_POST['accessory']);
 
-    foreach ($_POST['accessory'] as $accessory) {
-        $accessories = $accessory;
-    }
+//    foreach ($accessories as $accessory) {
+//        echo " " . $accessory;
+//    }
 
-    $_SESSION['accessory'] = $accessories;
 
-    var_dump($accessories);
+
+   $_SESSION['accessory'] = $accessories;
 
     $view = new Template();
     echo $view->render('views/order-summary.html');

@@ -9,7 +9,7 @@
     <h4>Order Summary</h4>
     <p>Hope you enjoy your, {{ @SESSION.pet }} named, {{ @SESSION.petName }}! <br></p>
     <p>Size of: {{ @SESSION.size }}</p>
-    <p>Accessories: {{ @SESSION.accessory }}</p>
+    <p>Accessories: {{ @SESSION.accessory[0] }} {{ @SESSION.accessory[1] }} {{ @SESSION.accessory[2] }}</p>
     <p>Color: {{ @SESSION.color }}</p>
 
     <a href="order3">More Info</a>
