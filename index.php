@@ -43,7 +43,7 @@ $f3->route('GET /order', function($f3) {
 });
 
 //Order 2 Route
-$f3->route('POST /order2', function() {
+$f3->route('POST /order2', function($f3) {
 
     //Verify 'pet' exists in the post array, if so save it to session
     if(isset($_POST['pet'])) {
@@ -59,6 +59,12 @@ $f3->route('POST /order2', function() {
             $_SESSION['colors'] = $colorsArray;
         }
     }
+
+    $sizes = getSizes();
+    $f3->set('sizes', $sizes);
+
+    $accessories = getAccessories();
+    $f3->set('accessories', $accessories);
 
     $view = new Template();
     echo $view->render('views/pet-order2.html');

@@ -12,6 +12,23 @@
                 <input type="text" name="petName">
             </label><br><br>
 
+<!--            <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">-->
+<!--                <input type="checkbox">{{ @sizeOption }} <br>-->
+<!--                <label>Select a size: </label>-->
+<!--            </repeat>-->
+
+            <h3>Select a size: </h3>
+            <repeat group="{{ @sizes }}" value="{{ @sizeOption }}">
+                <input type="radio" id="size" name="size">
+                <label for="size"> {{ @sizeOption }} </label> <br>
+            </repeat>
+
+            <h3>Select an accessory: </h3>
+            <repeat group="{{ @accessories }}" value="{{ @accessoryOption }}">
+                <input type="checkbox">{{ @accessoryOption }} <br> </input>
+            </repeat>
+            <br>
+
             <input type="submit" value="Submit the order">
         </form>
     </div>
